@@ -1,3 +1,6 @@
-h5{
-margin-left: 90px;
+.h5{
+  padding-left: 90px;
+}
+.card-title{
+  text-align: center;
 }

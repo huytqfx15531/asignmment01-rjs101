@@ -27,7 +27,7 @@ class App extends Component {
 </div>
 </Navbar>
 <Menu staffs={this.state.staffs} />
-<h5>Bấm vào nhân viên để xem thông tin.</h5>
+<h5 className='h5'>Bấm vào nhân viên để xem thông tin.</h5>
   </div>
   );
   }
