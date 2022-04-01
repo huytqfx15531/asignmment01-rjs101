@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { Card, CardImg, CardImgOverlay, CardText, CardBody,
     CardTitle } from 'reactstrap';
 import dateFormat from 'dateformat'; 
-import { DEPARTMENTS } from '../shared/staffs';
+import { ROLE } from '../shared/staffs';
+
+
   
     
 
@@ -32,6 +34,7 @@ import { DEPARTMENTS } from '../shared/staffs';
                        <CardText>Ngày sinh: {dateFormat(staffs.doB, "dd/mm/yyyy")}</CardText>
                        <CardText>Ngày vào công ty: {dateFormat(staffs.startDate, "dd/mm/yyyy")}</CardText>
                        <CardText>Phòng ban: {staffs.department.name}</CardText>
+                       <CardText>Chức danh: {ROLE.NORMAL_STAFF}</CardText>
                        <CardText>Số ngày nghĩ còn lại: {staffs.annualLeave}</CardText>
                        <CardText>Số ngày đã làm thêm: {staffs.overTime}</CardText>
                       
