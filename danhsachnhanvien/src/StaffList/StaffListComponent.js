@@ -28,6 +28,7 @@ import { DEPARTMENTS } from '../shared/staffs';
                     <Card>
                          <CardTitle>Họ và tên: {staffs.name}</CardTitle>
                        <CardBody>
+                           <CardText>Bộ phận: {staffs.department.id}</CardText>
                        <CardText>Ngày sinh: {dateFormat(staffs.doB, "dd/mm/yyyy")}</CardText>
                        <CardText>Ngày vào công ty: {dateFormat(staffs.startDate, "dd/mm/yyyy")}</CardText>
                        <CardText>Phòng ban: {staffs.department.name}</CardText>
