@@ -24,7 +24,7 @@ const StaffList = (props) => {
 
     //Dùng hàm sort để sắp xếp,map để kéo toàn bộ mảng ra màn hình
     const staffList = props.staffs.sort((a, b) => sortId ? a.id : b.id)
-       .map((val) => {
+        .map((val) => {
             return (
                 <div className={column} key={val.id}>
                     <RenderStaffItem staff={val} />
@@ -39,7 +39,10 @@ const StaffList = (props) => {
                 <div className="col-3 mt-3">
                     <h3>Nhân viên</h3>
                 </div>
-                <hr />
+                <div className="col-12">
+                    <hr />
+                </div>
+
             </div>
             <div className="row shadow mb-5 mt-5">
                 {staffList}

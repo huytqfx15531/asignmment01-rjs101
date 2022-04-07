@@ -41,8 +41,10 @@ const StaffDetail = (props) => {
                     </Breadcrumb>
                     <div className="col-12">
                         <h3>{props.staff.name}</h3>
-                        <hr />
-                    </div>
+                        </div>
+                        <div className="col-12">
+                              <hr />
+                        </div>
                 </div>
                 <div className="row mb-3">
                     <RenderStaff staff={props.staff} />                    
