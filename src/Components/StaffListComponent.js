@@ -20,18 +20,11 @@ const RenderStaffItem = ({ staff }) => {
 const StaffList = (props) => {
     //Sử dụng hook useState hiển thị số cột, tìm kiếm tên nhân viên, sắp xếp mã số nhân viên
     const [column] = useState('col-6 col-md-4 col-lg-2 mt-3 mb-3');
-    const [name] = useState("");
     const [sortId] = useState(false);
 
-    //Dùng hàm map để kéo toàn bộ mảng ra màn hình, có sử dụng hàm sort để sắp xếp, hàm filter để lọc tìm kiếm
+    //Dùng hàm sort để sắp xếp,map để kéo toàn bộ mảng ra màn hình
     const staffList = props.staffs.sort((a, b) => sortId ? a.id : b.id)
-        .filter((val) => {
-            if (name === "")
-                return val;
-            else if (val.name.toLowerCase().includes(name.toLowerCase()))
-                return val;
-            return 0;
-        }).map((val) => {
+       .map((val) => {
             return (
                 <div className={column} key={val.id}>
                     <RenderStaffItem staff={val} />
