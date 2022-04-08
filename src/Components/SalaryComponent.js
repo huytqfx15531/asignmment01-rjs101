@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 const luongCB = 3000000;
 const luongGio = 200000;
 
-function RenderSalary ({salary}) {
+function RenderSalary ({salary, colorSalary }) {
     return(
         <Card>
             <CardTitle className="p-3 bg-white rounded m-2">{salary.name}</CardTitle>
@@ -20,9 +20,9 @@ function RenderSalary ({salary}) {
 }
 
 const Salary = (props) => {
-    const [sortSalary]=useState(false)
+    const [sortSalary,setSortSalary]=useState(false)
     
-    const salary = props.staffs.sort((a,b)=>sortSalary ? a.salaryScale : b.salaryScale).map((ss) => {
+    const salary = props.staffs.sort((a,b)=>sortSalary ? a.salaryScale - b.salaryScale : b.salaryScale - a.salaryScale).map((ss) => {
         return(
             <div className="col-12 col-md-6 col-lg-4 mt-2 mb-2" key={ss.id}>
                 <RenderSalary salary={ss} />
@@ -40,7 +40,7 @@ const Salary = (props) => {
                 </Breadcrumb>                
             </div>
             
-           
+            <button className="btn btn-danger" onClick={()=>setSortSalary(!sortSalary)}>Sắp xếp theo Hệ số lương</button>
             <div className="row shadow mb-3">
                 {salary}
             </div>
