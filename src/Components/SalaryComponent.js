@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 const luongCB = 3000000;
 const luongGio = 200000;
 
-function RenderSalary ({salary, colorSalary }) {
+function RenderSalary ({salary}) {
     return(
         <Card>
             <CardTitle className="p-3 bg-white rounded m-2">{salary.name}</CardTitle>
@@ -22,10 +22,10 @@ function RenderSalary ({salary, colorSalary }) {
 const Salary = (props) => {
     const [sortSalary,setSortSalary]=useState(false)
     
-    const salary = props.staffs.sort((a,b)=>sortSalary ? a.salaryScale - b.salaryScale : b.salaryScale - a.salaryScale).map((ss) => {
+    const salary = props.staffs.sort((a,b)=>sortSalary ? a.salaryScale - b.salaryScale : b.salaryScale - a.salaryScale).map((staff) => {
         return(
-            <div className="col-12 col-md-6 col-lg-4 mt-2 mb-2" key={ss.id}>
-                <RenderSalary salary={ss} />
+            <div className="col-12 col-md-6 col-lg-4 mt-2 mb-2" key={staff.id}>
+                <RenderSalary salary={staff} />
             </div>
         )
     });

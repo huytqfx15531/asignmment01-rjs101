@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Card, CardImg, CardBody, CardSubtitle } from "reactstrap";
 import { Link } from 'react-router-dom';
 
@@ -19,15 +19,13 @@ const RenderStaffItem = ({ staff }) => {
 // Presentational component (const) 
 const StaffList = (props) => {
     //Sử dụng hook useState hiển thị số cột, tìm kiếm tên nhân viên, sắp xếp mã số nhân viên
-    const [column] = useState('col-6 col-md-4 col-lg-2 mt-3 mb-3');
-    const [sortId] = useState(false);
+  
 
     //Dùng hàm sort để sắp xếp,map để kéo toàn bộ mảng ra màn hình
-    const staffList = props.staffs.sort((a, b) => sortId ? a.id : b.id)
-        .map((val) => {
+    const staffList = props.staffs.map((staff) => {
             return (
-                <div className={column} key={val.id}>
-                    <RenderStaffItem staff={val} />
+                <div className='col-6 col-md-4 col-lg-2 mt-3 mb-3' key={staff.id}>
+                    <RenderStaffItem staff={staff} />
                 </div>
             );
         });
