@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Card, CardTitle, CardBody, CardText, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import {Link} from 'react-router-dom';
 
@@ -20,9 +20,9 @@ function RenderSalary ({salary}) {
 }
 
 const Salary = (props) => {
-    const [sortSalary,setSortSalary]=useState(false)
     
-    const salary = props.staffs.sort((a,b)=>sortSalary ? a.salaryScale - b.salaryScale : b.salaryScale - a.salaryScale).map((staff) => {
+    
+    const salary = props.staffs.map((staff) => {
         return(
             <div className="col-12 col-md-6 col-lg-4 mt-2 mb-2" key={staff.id}>
                 <RenderSalary salary={staff} />
@@ -40,7 +40,7 @@ const Salary = (props) => {
                 </Breadcrumb>                
             </div>
             
-            <button className="btn btn-danger" onClick={()=>setSortSalary(!sortSalary)}>Sắp xếp theo Hệ số lương</button>
+           
             <div className="row shadow mb-3">
                 {salary}
             </div>
