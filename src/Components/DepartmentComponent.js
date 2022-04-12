@@ -7,9 +7,9 @@ class RenderDept extends Component {
         return (
             //Render Department dung props cua Department Component
             <Card>
-                <CardTitle className="m-2">{this.props.dept.name}</CardTitle>
+                <CardTitle className="m-2">{this.props.department.name}</CardTitle>
                 <CardBody>
-                    <CardText>Số lượng nhân viên: {this.props.dept.numberOfStaff}</CardText>
+                    <CardText>Số lượng nhân viên: {this.props.department.numberOfStaff}</CardText>
                 </CardBody>
             </Card>
         );
@@ -20,11 +20,11 @@ class RenderDept extends Component {
 //Container components
 class Department extends Component {
     render() {
-        //Dung map() de fetch toan bo data tu props cua MainComponent
+        
         const departments = this.props.departments.map((department) => {
             return (
                 <div className="col-12 col-md-6 col-lg-4 mt-2 mb-2" key={department.id}>
-                    <RenderDept dept={department} />
+                    <RenderDept department={department} />
                 </div>
             )
         })
